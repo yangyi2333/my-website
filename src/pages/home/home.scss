@@ -1,0 +1,22 @@
+.main{
+  height: 100%;
+  color: $font-color-main;
+}
+.main-center{
+  height: calc(100% - 40px);
+  background-color: nth($theme,1);
+}
+.main-content{
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+@media screen and (min-width: 768px){
+  .main-content{
+    padding: 30px 64px;
+  }
+}

@@ -1,0 +1,57 @@
+body, figure, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:erikos,couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none;color: inherit; }
+a:hover { text-decoration:none; color: inherit; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+a,button{
+  cursor: pointer;
+  border: none;
+}
+span,a,button,li{
+  -moz-user-focus: none;
+}
+*:focus {
+  outline: none
+}
+
+html{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family:$my-font;
+  font-color:$font-color-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root{
+  height: 100%;
+}
+
+
+@font-face {
+  font-family: 'song';
+  src: url('./思源宋体SC-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+  //font-size:67.5%;
+}
+@font-face {
+  font-family: 'font-En';
+  src: url('./BarlowCondensed-Thin.ttf');
+  font-weight: normal;
+  font-style: normal;
+  //font-size:67.5%;
+}

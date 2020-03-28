@@ -1,0 +1,60 @@
+//font
+$my-font:'song';
+$my-font-en:'font-En';
+$font-color-grey:#999;
+$font-color-main:#666;
+$font-color-black:#333;
+
+//color
+$color-bg:#f9f6f7;
+$color-bg-gap:#f1f1f1;
+$color-border:rgba(0,0,0,0.12);
+
+//theme
+$theme:(#fae3d9,#ffb6b9,#bbded6,#88e1f2);
+$sider-btn:(#f688bb,#8ac6d1,#e4a3d4,#ffbd69);
+
+@mixin btn {
+  position: relative;
+  &::after{
+    @include center(30px, 30px);
+    display: block;
+    content: '';
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:3px solid nth($theme,4);
+    z-index: -1;
+    transform: scale(0);
+    transition:transform 0.3s cubic-bezier(.18,1.29,.89,1.24);
+  }
+  &:hover{
+    cursor: pointer;
+    &::after{
+      transform: scale(1)
+    }
+  }
+}
+@mixin btn-active {
+  &::after{
+    background-color:  nth($theme,4);
+    transform: scale(1);
+    transition: none;
+    animation: indexs 0.15s ease-out forwards;
+  }
+}
+.btn-active{
+  @include btn-active()
+}
+@mixin center ($width, $height){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -$width/2;
+  margin-top: -$height/2;
+}
+
+
+.primary-theme{
+}

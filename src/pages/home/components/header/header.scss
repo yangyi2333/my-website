@@ -1,0 +1,33 @@
+.home-header{
+  background-color: nth($theme,2);
+  height: 40px;
+  text-align: center;
+  z-index: -2;
+  .home-header-links{
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    width: 320px;
+    &>span{
+      font-family: $my-font-en;
+      font-weight: bold;
+      font-size: 1.4rem;
+      display: inline-block;
+      line-height: 40px;
+      width: 25%;
+      float: left;
+      z-index: 1;
+      @include btn()
+    }
+    .btn-active{
+      @include btn-active()
+    }
+  }
+}
+@media screen and (min-width: 768px){
+  .home-header{
+    .home-header-links{
+      width: 320px;
+    }
+  }
+}

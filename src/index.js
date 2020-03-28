@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
+import './style/global_style.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createHashHistory } from 'history';
+
+
+React.history = createHashHistory();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

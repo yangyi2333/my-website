@@ -1,0 +1,35 @@
+
+.box_404{
+  width:100vm;
+  height: 100vh;
+  background-color: #f4f4f4;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index:100;
+  &>div{
+    border:1px solid #bdbdbd;
+    border-radius:10px;
+    display: inline-block;
+    margin-top: 30vh;
+    background-color: #fff;
+    padding: 30px;
+  }
+  h1{
+    font-size: 5.4rem;
+    line-height: 5.4rem;
+  }
+  h3{
+    font-size: 2.2rem;
+    margin-top: 8px;
+    margin-bottom: 26px;
+  }
+  span{
+    font-size: 1.2rem;
+    color: #101010;
+    text-decoration: underline;
+  }
+}
