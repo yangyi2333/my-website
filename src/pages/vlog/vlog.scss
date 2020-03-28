@@ -1,21 +1,24 @@
 .vlog-container{
   height: 100%;
   width: 100%;
-  .vlog-container-list,.vlog-container-display{
+  .vlog-container-left,.vlog-container-display{
     border: 1px solid $color-border;
     height: 100%;
     border-radius: 20px;
     box-sizing: border-box;
     box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.2);
   }
-  .vlog-container-list{
+  .vlog-container-left{
     float: left;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     background-color: $color-bg;
+  }
+  .vlog-container-list{
+    height: calc(100% - 40px);
+    width: 100%;
     overflow-y: scroll;
-    position: relative;
-    padding-top: 40px;
   }
   .vlog-container-list-title{
     height: 40px;
@@ -24,8 +27,6 @@
     text-align: center;
     border-bottom: 1px solid $color-border;
     background-color:$color-bg-gap;
-    position: absolute;
-    top: 0;
   }
   .vlog-item{
     padding: 10px;
@@ -70,7 +71,7 @@
 }
 @media screen and (min-width: 768px){
   .vlog-container{
-    .vlog-container-list{
+    .vlog-container-left{
       width: 380px;
       box-shadow: 3px 3px 8px 2px rgba(0,0,0,0.2);
     }

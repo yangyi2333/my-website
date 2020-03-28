@@ -29,6 +29,15 @@ export default class HomeHeader extends React.Component {
         React.history.push(path)
         this.setState({currentIndex:index})
     }
+    componentDidMount() {
+        const path = React.history.location.pathname;
+        menu.forEach((item,index)=>{
+            if(item.path === path){
+                this.setState({currentIndex:index})
+            }
+        })
+    }
+
     render(){
         return (
             <div className="home-header">
