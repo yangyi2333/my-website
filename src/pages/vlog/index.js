@@ -75,10 +75,13 @@ export default class Vlog extends React.Component {
                 viewNum:10,
                 likeNum:5,
                 comment:1,
-            }]
+            }],
+            currentIndex:0,
         }
     }
-
+    handleChooseVlog(index){
+        this.setState({currentIndex:index})
+    }
     render(){
         return (
             <div className="vlog-container">
@@ -86,9 +89,11 @@ export default class Vlog extends React.Component {
                     <div className="vlog-container-list-title">假装这是个搜索框</div>
                     <div className="vlog-container-list">
                         {
-                            this.state.data.map(item=>{
+                            this.state.data.map((item,index)=>{
                                 return (
-                                    <div key={item.title} className="vlog-item">
+                                    <div key={item.title} className={`vlog-item ${this.state.currentIndex === index ? 'vlog-item-active' : ''}`}
+                                        onClick={this.handleChooseVlog.bind(this,index)}
+                                    >
                                         <div className="vlog-item-img-box">
                                             <img src={item.img} alt="" style={{width:'100%',height:'100%'}}/>
                                         </div>
@@ -114,7 +119,7 @@ export default class Vlog extends React.Component {
                 {
                     !getAgent &&
                     <div className="vlog-container-display">
-
+                        <div className="vlog-container-list-title">假装这是个标题</div>
                     </div>
                 }
             </div>

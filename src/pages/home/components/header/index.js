@@ -1,5 +1,6 @@
 import React from "react";
 import './header.scss'
+import menu_img from '@/style/img/menu.png'
 /**
  * 首页
  */
@@ -48,6 +49,9 @@ export default class HomeHeader extends React.Component {
                                          onClick={()=>{this.handleRoute(item.path,index)}}>{item.text}</span>
                         })
                     }
+                </div>
+                <div className="home-header-menu">
+                    <img src={menu_img} alt=""/>
                 </div>
             </div>
         )

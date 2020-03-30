@@ -23,9 +23,23 @@
       @include btn-active()
     }
   }
+  .home-header-menu{
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 @media screen and (min-width: 768px){
   .home-header{
+    .home-header-menu{
+      display: none;
+    }
     .home-header-links{
       width: 320px;
     }

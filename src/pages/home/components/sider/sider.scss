@@ -1,19 +1,22 @@
 .home-sider{
   display: none;
+  width: 40px;
   height: 100%;
-  width: 64px;
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
+  z-index: 1;
+  //height: 75px;
   .home-sider-box{
+    width: 100%;
     overflow: hidden;
     position: absolute;
-    bottom: 0;
+    top:60px;
+    text-align: center;
   }
   .home-sider-item{
-    float: left;
     width: 100%;
-    margin: 10px 0;
+    display: inline-block;
     &:hover{
       cursor: pointer;
       text-shadow:6px 4px 2px rgba(0,0,0,0.2);
@@ -22,11 +25,11 @@
       }
     }
     .home-sider-img{
-      width: 42px;
-      height:42px;
+      width: 32px;
+      height:32px;
       //background-color: nth($sider-btn,1);
       border-radius: 50%;
-      margin: 5px 11px;
+      margin: 5px;
       color: $font-color-main;
     }
     @for $i from 1 through length($sider-btn){
@@ -38,16 +41,37 @@
       float: left;
       border-radius: 50%;
       margin: 6px;
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
     }
     p{
       text-align: center;
+      display: none;
     }
   }
 }
 @media screen and (min-width: 768px){
   .home-sider{
     display: block;
+    width: 64px;
+    bottom: 0;
+    .home-sider-box{
+      //top: 100%;
+    }
+    .home-sider-item{
+      margin: 10px 0;
+      .home-sider-img{
+        width: 42px;
+        height:42px;
+        margin: 5px 11px;
+        img{
+          width: 30px;
+          height:30px;
+        }
+      }
+      p{
+        display: block;
+      }
+    }
   }
 }
