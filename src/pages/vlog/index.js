@@ -85,43 +85,71 @@ export default class Vlog extends React.Component {
     render(){
         return (
             <div className="vlog-container">
-                <div className="vlog-container-left">
-                    <div className="vlog-container-list-title">假装这是个搜索框</div>
-                    <div className="vlog-container-list">
-                        {
-                            this.state.data.map((item,index)=>{
-                                return (
-                                    <div key={item.title} className={`vlog-item ${this.state.currentIndex === index ? 'vlog-item-active' : ''}`}
-                                        onClick={this.handleChooseVlog.bind(this,index)}
-                                    >
-                                        <div className="vlog-item-img-box">
-                                            <img src={item.img} alt="" style={{width:'100%',height:'100%'}}/>
+                <div className="vlog-container-list">
+                    {
+                        this.state.data.map((item,index)=>{
+                            return (
+                                <div key={item.title} className="vlog-item"
+                                     onClick={this.handleChooseVlog.bind(this,index)}
+                                >
+                                    <div className="vlog-item-img-box">
+                                        <img src={item.img} alt="" style={{width:'100%',height:'100%'}}/>
+                                    </div>
+                                    <div className="vlog-item-content">
+                                        <p className="vlog-item-content-title line-limit-2">{item.title}</p>
+                                        <div className="vlog-item-content-info">
+                                            {
+                                                item.tags.map(item0=>{
+                                                    return <span key={item0} className="vlog-item-tags">{item0}</span>
+                                                })
+                                            }
                                         </div>
-                                        <div className="vlog-item-content">
-                                            <p className="vlog-item-content-title line-limit-2">{item.title}</p>
-                                            <div className="vlog-item-content-info">
-                                                {
-                                                    item.tags.map(item0=>{
-                                                        return <span key={item0} className="vlog-item-tags">{item0}</span>
-                                                    })
-                                                }
-                                            </div>
-                                            <div className="vlog-item-content-info">
-                                                {item.time}
-                                            </div>
+                                        <div className="vlog-item-content-info">
+                                            {item.time}
                                         </div>
                                     </div>
-                                )
-                            })
-                        }
-                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
-                {
-                    !getAgent &&
-                    <div className="vlog-container-display">
-                        <div className="vlog-container-list-title">假装这是个标题</div>
-                    </div>
-                }
+                {/*<div className="vlog-container-left">*/}
+                {/*    <div className="vlog-container-list-title">假装这是个搜索框</div>*/}
+                {/*    <div className="vlog-container-list">*/}
+                {/*        {*/}
+                {/*            this.state.data.map((item,index)=>{*/}
+                {/*                return (*/}
+                {/*                    <div key={item.title} className={`vlog-item ${this.state.currentIndex === index ? 'vlog-item-active' : ''}`}*/}
+                {/*                        onClick={this.handleChooseVlog.bind(this,index)}*/}
+                {/*                    >*/}
+                {/*                        <div className="vlog-item-img-box">*/}
+                {/*                            <img src={item.img} alt="" style={{width:'100%',height:'100%'}}/>*/}
+                {/*                        </div>*/}
+                {/*                        <div className="vlog-item-content">*/}
+                {/*                            <p className="vlog-item-content-title line-limit-2">{item.title}</p>*/}
+                {/*                            <div className="vlog-item-content-info">*/}
+                {/*                                {*/}
+                {/*                                    item.tags.map(item0=>{*/}
+                {/*                                        return <span key={item0} className="vlog-item-tags">{item0}</span>*/}
+                {/*                                    })*/}
+                {/*                                }*/}
+                {/*                            </div>*/}
+                {/*                            <div className="vlog-item-content-info">*/}
+                {/*                                {item.time}*/}
+                {/*                            </div>*/}
+                {/*                        </div>*/}
+                {/*                    </div>*/}
+                {/*                )*/}
+                {/*            })*/}
+                {/*        }*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+                {/*{*/}
+                {/*    !getAgent &&*/}
+                {/*    <div className="vlog-container-display">*/}
+                {/*        <div className="vlog-container-list-title">假装这是个标题</div>*/}
+                {/*    </div>*/}
+                {/*}*/}
             </div>
         )
     }

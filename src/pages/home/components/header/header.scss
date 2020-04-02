@@ -1,13 +1,18 @@
 .home-header{
-  background-color: nth($theme,2);
+  background-color: rgba(255,255,255,0.2);
   height: 40px;
+  width: 100%;
   text-align: center;
-  z-index: -2;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  box-shadow: 1px 0 8px 1px rgba(0,0,0,0.1);
   .home-header-links{
     display: inline-block;
     vertical-align: top;
     overflow: hidden;
     width: 320px;
+    @include text-shadow(1px);
     &>span{
       font-family: $my-font-en;
       font-weight: bold;

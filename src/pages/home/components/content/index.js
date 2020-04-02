@@ -61,11 +61,12 @@ export default class HomeContent extends React.Component {
     render(){
         return (
             <div className="home-content">
-                <div className="main-content-bg-box1"></div>
-                <div className="main-content-bg-box2"></div>
+                <div className="home-banner">
+
+                </div>
                 <div className="home-content-box">
-                    <div className="home-content-time">{this.state.currentTime}</div>
                     <div className="home-content-text">
+                        <div className="home-content-time">{this.state.currentTime}</div>
                         <div className="home-content-title">{this.state.greeting.title}</div>
                         <div className="home-content-subtitle">{this.state.greeting.subtitle}</div>
                     </div>
