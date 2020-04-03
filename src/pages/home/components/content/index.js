@@ -1,24 +1,65 @@
 import React from "react";
+import getAgent from "@/utils/getAgent";
 import './content.scss'
 /**
  * 首页
  */
-
+const SCREEN_HEIGHT = document.documentElement.clientWidth * 2 / 3;
 export default class HomeContent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTime:'',
+            currentHour:'',
+            currentMinute:'',
+            currentSecond:'',
             greeting:{
                 title:'',
                 subtitle:''
-            }
+            },
+            bgImgList:[
+                require("./banner.jpg"),
+                require("./banner1.jpg"),
+                require("./banner2.jpg"),
+                require("./banner3.jpg"),
+            ],
+            currentImgIndex:null,
+            imgDom:''
         }
     }
 
     componentDidMount() {
         this.getTime();
-        setInterval(this.getTime.bind(this),1000);
+        this.imgRandom();
+        this.setState({myTimer:setInterval(this.getTime.bind(this),1000),imgTimer:setInterval(this.imgRandom.bind(this),1*3*1000)});
+    }
+    componentWillUnmount(){
+        clearInterval(this.state.myTimer)
+        clearInterval(this.state.imgTimer)
+    }
+    //图片随机展示的方法
+    imgRandom(){
+        let {currentImgIndex} = this.state;
+        // 计算一个随机数
+        const index = Math.floor(Math.random() * this.state.bgImgList.length);
+        // 随机展示一个图片
+        if(index !== currentImgIndex){
+            console.log(index,currentImgIndex)
+            let imgDom = '',newBgImg = this.state.bgImgList[index];
+            imgDom = (
+                <div className="home-banner" style={getAgent ? {height:SCREEN_HEIGHT} :{}}>
+                    <div className="home-banner-item">
+                        <img src={currentImgIndex != null ? this.state.bgImgList[currentImgIndex] : newBgImg} alt=""/>
+                    </div>
+                    <div className="home-banner-newItem home-banner-fadeIn">
+                        <img src={newBgImg} alt=""/>
+                    </div>
+                </div>
+            )
+            // this.setState({imgDom,currentImgIndex:index})
+            this.setState({imgDom:''},()=>{
+                this.setState({imgDom,currentImgIndex:index})
+            })
+        }
     }
     getTime(){
         const date  = new Date();
@@ -56,18 +97,22 @@ export default class HomeContent extends React.Component {
         if (second < 10) {
             second = '0' + second;
         }
-        this.setState({currentTime:`${hour} : ${minute} : ${second}`,greeting})
+        this.setState({currentHour:hour,currentMinute:minute,currentSecond:second,greeting})
     }
     render(){
         return (
             <div className="home-content">
-                <div className="home-banner">
-
-                </div>
-                <div className="home-content-box">
+                    {
+                        this.state.imgDom
+                    }
+                <div className="home-content-box" style={getAgent ? {height:SCREEN_HEIGHT - 40} :{}}>
                     <div className="home-content-text">
-                        <div className="home-content-time">{this.state.currentTime}</div>
                         <div className="home-content-title">{this.state.greeting.title}</div>
+                        <div className="home-content-time">
+                            <span>{this.state.currentHour}</span>:
+                            <span>{this.state.currentMinute}</span>:
+                            <span>{this.state.currentSecond}</span>
+                        </div>
                         <div className="home-content-subtitle">{this.state.greeting.subtitle}</div>
                     </div>
                 </div>

@@ -1,0 +1,5 @@
+.vlog-detail{
+  @include content-width();
+  background-color: red;
+  height: 100px;
+}

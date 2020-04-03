@@ -1,5 +1,5 @@
 .home-header{
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(0,0,0,0.2);
   height: 40px;
   width: 100%;
   text-align: center;
@@ -12,7 +12,8 @@
     vertical-align: top;
     overflow: hidden;
     width: 320px;
-    @include text-shadow(1px);
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0,0,0,0.8);
     &>span{
       font-family: $my-font-en;
       font-weight: bold;
@@ -40,7 +41,7 @@
     }
   }
 }
-@media screen and (min-width: 768px){
+@media screen and (min-width: 769px){
   .home-header{
     .home-header-menu{
       display: none;

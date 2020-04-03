@@ -1,10 +1,10 @@
 import React from "react";
-import getAgent from "@/utils/getAgent";
+// import getAgent from "@/utils/getAgent";
 import './vlog.scss'
 import cover01 from '@/style/img/cover01.jpg'
 import cover02 from '@/style/img/cover02.png'
 /**
- * 首页
+ * VLOG页面
  */
 
 export default class Vlog extends React.Component {
@@ -81,6 +81,7 @@ export default class Vlog extends React.Component {
     }
     handleChooseVlog(index){
         this.setState({currentIndex:index})
+        React.history.push('/vlog/detail')
     }
     render(){
         return (
