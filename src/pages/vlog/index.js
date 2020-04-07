@@ -2,7 +2,7 @@ import React from "react";
 // import getAgent from "@/utils/getAgent";
 import './vlog.scss'
 import cover01 from '@/style/img/cover01.jpg'
-import cover02 from '@/style/img/cover02.png'
+import cover02 from '@/style/img/cover01.jpg'
 /**
  * VLOG页面
  */
@@ -90,14 +90,12 @@ export default class Vlog extends React.Component {
                     {
                         this.state.data.map((item,index)=>{
                             return (
-                                <div key={item.title} className="vlog-item"
-                                     onClick={this.handleChooseVlog.bind(this,index)}
-                                >
-                                    <div className="vlog-item-img-box">
+                                <div key={item.title} className="vlog-item">
+                                    <div className="vlog-item-img-box" onClick={this.handleChooseVlog.bind(this,index)}>
                                         <img src={item.img} alt="" style={{width:'100%',height:'100%'}}/>
                                     </div>
                                     <div className="vlog-item-content">
-                                        <p className="vlog-item-content-title line-limit-2">{item.title}</p>
+                                        <p className="vlog-item-content-title line-limit-2" onClick={this.handleChooseVlog.bind(this,index)}>{item.title}</p>
                                         <div className="vlog-item-content-info">
                                             {
                                                 item.tags.map(item0=>{

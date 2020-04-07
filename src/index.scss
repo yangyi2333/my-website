@@ -8,41 +8,28 @@ $font-color-black:#333;
 //color
 $color-bg:#f9f6f7;
 $color-bg-gap:#f1f1f1;
-$color-border:rgba(0,0,0,0.12);
+$color-border:rgba(0,0,0,0.08);
 
 //theme
 $theme:(#fae3d9,#ffb6b9,#bbded6,#88e1f2);
 $sider-btn:(#f688bb,#8ac6d1,#e4a3d4,#ffbd69);
+$color-primary:#1296db;
 
 @mixin btn {
   position: relative;
-  &::after{
-    @include center(30px, 30px);
-    display: block;
-    content: '';
-    box-sizing: border-box;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border:3px solid nth($theme,4);
-    z-index: -1;
-    transform: scale(0);
-    transition:transform 0.3s cubic-bezier(.18,1.29,.89,1.24);
-  }
   &:hover{
     cursor: pointer;
-    &::after{
-      transform: scale(1)
-    }
+    box-shadow: 0 0 6px 4px rgba(255,255,255,0.4) inset;
   }
 }
 @mixin btn-active {
-  &::after{
-    background-color:  nth($theme,4);
-    transform: scale(1);
-    transition: none;
-    animation: indexs 0.15s ease-out forwards;
-  }
+  box-shadow: 0 0 6px 4px rgba(255,255,255,0.4) inset;
+  //&::after{
+  //  background-color:  nth($theme,4);
+  //  transform: scale(1);
+  //  transition: none;
+  //  animation: indexs 0.15s ease-out forwards;
+  //}
 }
 .btn-active{
   @include btn-active()
@@ -62,5 +49,29 @@ $sider-btn:(#f688bb,#8ac6d1,#e4a3d4,#ffbd69);
   display: inline-block;
   margin: 0 auto;
 }
-.primary-theme{
+
+@mixin fade-in-up(){
+  -webkit-animation-name: fadeInUp;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-direction: alternate;
+  @-webkit-keyframes fadeInUp {
+    from {
+      opacity:0;
+      -webkit-transform: translate3d(0, 10px, 0);
+      transform: translate3d(0, 10px, 0);
+    }
+    to{
+      opacity:1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+@mixin line-limit($lines){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
 }

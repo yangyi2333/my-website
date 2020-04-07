@@ -4,7 +4,9 @@
 }
 .main-center{
   height: calc(100% - 40px);
-  background-color: nth($theme,1);
+  //background-color: nth($theme,1);
+  //background-color: $color-bg;
+  background-color: #fff;
   padding-top: 40px;
 }
 .main-content{

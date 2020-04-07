@@ -17,10 +17,8 @@ export default class HomeContent extends React.Component {
                 subtitle:''
             },
             bgImgList:[
-                require("./banner.jpg"),
-                require("./banner1.jpg"),
-                require("./banner2.jpg"),
-                require("./banner3.jpg"),
+                require('./banner01.jpg'),
+                require('./banner02.jpg'),
             ],
             currentImgIndex:null,
             imgDom:''

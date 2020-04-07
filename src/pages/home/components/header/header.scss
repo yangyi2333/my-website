@@ -1,19 +1,21 @@
 .home-header{
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(187,222,214,0.3);
+  //background-color: nth($theme,3);
+  //opacity: 0.5;
   height: 40px;
   width: 100%;
   text-align: center;
   z-index: 10;
   position: fixed;
   top: 0;
-  box-shadow: 1px 0 8px 1px rgba(0,0,0,0.1);
+  box-shadow: 0px 0 8px 1px rgba(255,255,255,0.5);
   .home-header-links{
     display: inline-block;
     vertical-align: top;
     overflow: hidden;
     width: 320px;
-    color: #fff;
-    text-shadow: 0 0 2px rgba(0,0,0,0.8);
+    color: $font-color-black;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
     &>span{
       font-family: $my-font-en;
       font-weight: bold;
@@ -23,10 +25,19 @@
       width: 25%;
       float: left;
       z-index: 1;
-      @include btn()
+      &:hover{
+        cursor: pointer;
+        box-shadow: 0 0 4px 1px rgba(0,0,0,0.1) inset;
+        background-color: nth($theme,3);
+        color: #fff;
+        text-shadow:none;
+      }
     }
     .btn-active{
-      @include btn-active()
+      box-shadow: 0 0 4px 1px rgba(0,0,0,0.1) inset;
+      background-color: nth($theme,3);
+      color: #fff;
+      text-shadow:none;
     }
   }
   .home-header-menu{

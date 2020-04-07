@@ -1,5 +1,98 @@
 .vlog-detail{
-  @include content-width();
-  background-color: red;
-  height: 100px;
+  overflow: hidden;
+  width: 100%;
+  .vlog-content{
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .vlog-content-abstract{
+    padding: 10px;
+  }
+  .my-card{
+    width: 280px;
+    float: left;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid $color-border;
+  }
+  .vlog-display{
+    margin-bottom: 10px;
+  }
+  .vlog-content-title{
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: $font-color-black;
+    @include line-limit(2)
+  }
+  .vlog-content-tags,.vlog-content-data{
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+    margin-top: 5px;
+  }
+  .vlog-content-tags-item{
+    margin-right: 10px;
+  }
+  .vlog-display-box{
+    height: auto;
+    background-color: $color-bg-gap;
+  }
+  .my-card-avatar{
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .my-card-description{
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    color: $font-color-grey;
+    margin: 10px 0;
+  }
+  .my-card-btn{
+    font-size: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    border: 1px solid $color-border;
+    border-radius: 10px;
+    background-color: nth($theme,4);
+    color: #fff;
+    width: 100%;
+    @include btn();
+  }
+}
+
+@media screen and (min-width: 769px){
+  .vlog-detail{
+    .vlog-content-abstract{
+      padding: 0;
+    }
+    @include content-width();
+    padding-top: 30px;
+    .vlog-content{
+      width: 800px;
+      padding: 20px 0;
+      margin-right: 20px;
+      float: left;
+    }
+    .vlog-display-box{
+      height: 450px
+    }
+    .vlog-display{
+      margin: 20px 0;
+    }
+    .vlog-content-title{
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+    }
+    .vlog-content-tags,.vlog-content-data{
+      font-size: 0.8rem;
+      line-height: 1rem;
+      margin-top: 10px;
+    }
+  }
 }

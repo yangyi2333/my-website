@@ -22,7 +22,7 @@ export default class Home extends React.Component {
             <div className="main">
                 <Header/>
                 <div className="main-center">
-                    <Sider/>
+                    {/*<Sider/>*/}
                     <div className="main-content">
                         {
                             routeList.map(item=>{

@@ -1,0 +1,128 @@
+.comment{
+  .comment-btn{
+    height: 2rem;
+    text-align: center
+  }
+  .comment-edit{
+    margin-top: 10px;
+    padding: 20px 10px;
+    border-top: 1px solid $color-border;
+  }
+  .comment-btn-item,.comment-btn-item-active{
+    height: 100%;
+    width: 3.3rem;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    display: inline-block;
+    &:hover{
+      cursor: pointer;
+      background-image: url("../style/icon/like_active.png");
+    }
+  }
+  .comment-btn-item{
+    background-image: url("../style/icon/like.png");
+  }
+  .comment-btn-item-active{
+    background-image: url("../style/icon/like_active.png");
+  }
+  .comment-add{
+    overflow: hidden;
+  }
+  .comment-item{
+    overflow: hidden;
+    margin-top: 20px;
+    min-height: 42px;
+    padding-top: 20px;
+    border-top: 1px solid $color-border;
+  }
+  .comment-item-content{
+    margin-left: 3rem;
+  }
+  .comment-item-title{
+    font-size: 0.85rem;
+    height: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .comment-item-name{
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  .comment-item-time{
+    color: $font-color-grey;
+  }
+  .comment-item-text{
+    color: $font-color-black;
+    font-size: 0.9rem;
+  }
+  .comment-add-avatar{
+    width: 2rem;
+    height: 2rem;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .comment-add-textarea{
+    margin: 0 5rem 0 3rem;
+    textarea{
+      resize: none;
+      width: calc(100% - 20px);
+      padding: 6px 10px;
+      border: 1px solid $color-border;
+      border-radius: 10px;
+      background-color: $color-bg;
+      color:$font-color-main;
+      font-family: $my-font;
+      font-size: 0.85rem;
+      &:focus{
+        background-color: #fff;
+      }
+    }
+  }
+  .comment-add-btn{
+    width: 4rem;
+    height: 2rem;
+    line-height: 2rem;
+    float: right;
+    color: #fff;
+    background-color: nth($theme,4);
+    vertical-align: top;
+    text-align: center;
+    @include btn();
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 769px){
+  .comment {
+    .comment-btn {
+      height: 3rem;
+    }
+    .comment-add-textarea{
+      margin: 0 100px 0 64px;
+    }
+    .comment-edit {
+      margin-top: 20px;
+      padding: 20px 0;
+    }
+    .comment-btn-item,.comment-btn-item-active {
+      width: 5rem;
+    }
+    .comment-item-content{
+      margin-left: 64px;
+    }
+    .comment-add-btn{
+       width: 80px;
+       height: 40px;
+       line-height: 40px;
+       border-radius: 10px;
+     }
+    .comment-add-avatar{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+    }
+  }
+}
